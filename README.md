@@ -1,15 +1,15 @@
 # FlowStacks-iOS-15-Bug
 Demonstrating SwiftUI navigation bug affecting [FlowStacks](https://github.com/johnpatrickmorgan/FlowStacks) on iOS 15, tracked at [issue #3](https://github.com/johnpatrickmorgan/FlowStacks/issues/3).
 
-I believe this might be related to using `replaceNFlow` twice to replace the navigation root, and seems to be made worse when `Buttons` are embedded in a `LazyVStack`. It does not affect iOS 14, only iOS 15. It usually doesn't happen on the first try, and on some launches it doesn't reproduce at all. Relaunching the app and going through the whole flow a few times seems to be necessary to reproduce.
+This was also written up as a radar and submitted to Apple (`FB9685923`).
 
-This will also be written up as a radar and submitted to Apple (FB# TBD).
+I believe this might be related to using `replaceNFlow` twice to replace the navigation root, and seems to be made worse when `Buttons` are embedded in a `LazyVStack`. It does not affect iOS 14, only iOS 15. It usually doesn't happen on the first try, and on some launches it doesn't reproduce at all. Relaunching the app and going through the whole flow a few times seems to be necessary to reproduce.
 
 ![screenshot](Media/debug-logs.png)
 
 Navigation fails at ~0:20 when on Screen 2 attempting to push Screen 3, and then corrupts the internal NFlow array, where it no longer reflects the user's actual location in the navigation stack.
 
-![video](Media/video-demo.mp4?raw=true)
+![video](Media/video-demo.mp?raw=true)
 
 I'm not sure if this is related, but when launching there are some iOS-internal UIKit constraint issues:
 
