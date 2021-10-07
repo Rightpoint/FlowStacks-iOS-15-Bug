@@ -9,7 +9,7 @@ I believe this might be related to using `replaceNFlow` twice to replace the nav
 
 Navigation fails at ~0:20 when on Screen 2 attempting to push Screen 3, and then corrupts the internal NFlow array, where it no longer reflects the user's actual location in the navigation stack.
 
-![video](Media/video-demo.mp?raw=true)
+![video](Media/video-demo.mp4?raw=true)
 
 I'm not sure if this is related, but when launching there are some iOS-internal UIKit constraint issues:
 
